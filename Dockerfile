@@ -2,5 +2,5 @@ FROM node
 WORKDIR /code
 COPY . .
 RUN npm install --silent
-EXPOSE 3000
+EXPOSE 8080
 CMD ["node","run.js"]

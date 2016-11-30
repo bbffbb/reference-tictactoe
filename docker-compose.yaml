@@ -1,0 +1,19 @@
+version: '1'
+services:
+  server:
+    environment:
+      - 'POSTGRES_HOST=postgres'
+      - 'POSTGRES_PORT=5432'
+      - 'PORT=8080'
+    image: 'birkirfb/tictactoe'
+    build:
+      context: '.'
+      dockerfile: 'Dockerfile'
+    ports:
+      - '8080:8080'
+    links:
+      - 'postgres'
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
