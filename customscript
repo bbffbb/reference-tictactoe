@@ -4,7 +4,7 @@ npm run build
 
 cp ./Dockerfile ./build/
 cp ./package.json ./build/
-
+cp ./run ./build/
 cd ./build
 
 docker build -t birkirfb/tictactoe .

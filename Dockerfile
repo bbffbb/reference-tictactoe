@@ -6,4 +6,4 @@ RUN npm install --silent
 COPY . .
 
 EXPOSE 3000
-CMD ["node","run.js"]
+CMD ["sh","run"]
