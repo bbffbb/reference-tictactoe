@@ -2,6 +2,7 @@ version: '2'
 services:
   server:
     environment:
+      - 'NODE_ENV=development'
       - 'PORT=3000'
     image: 'birkirfb/tictactoe'
     build:
