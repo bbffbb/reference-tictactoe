@@ -2,8 +2,9 @@ version: '2'
 services:
   server:
     environment:
-      - 'NODE_ENV=development' #probably not needed, but i added it when trying to get better understanding on the ENV variables.
       - 'PORT=3000' #the port the server is runned on.
+   
+      - 'NODE_ENV=production'
     image: 'birkirfb/tictactoe' #the name of the image the server is on.
     build:
       context: '.'
