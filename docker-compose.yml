@@ -3,7 +3,6 @@ services:
   server:
     environment:
       - 'PORT=3000' #the port the server is runned on.
-   
       - 'NODE_ENV=production'
     image: 'birkirfb/tictactoe' #the name of the image the server is on.
     build:
