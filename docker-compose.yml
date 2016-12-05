@@ -2,19 +2,19 @@ version: '2'
 services:
   server:
     environment:
-      - 'NODE_ENV=development'
-      - 'PORT=3000'
-    image: 'birkirfb/tictactoe'
+      - 'NODE_ENV=development' #probably not needed, but i added it when trying to get better understanding on the ENV variables.
+      - 'PORT=3000' #the port the server is runned on.
+    image: 'birkirfb/tictactoe' #the name of the image the server is on.
     build:
       context: '.'
-      dockerfile: 'Dockerfile'
+      dockerfile: 'Dockerfile' #which dockerfile is runned
     ports:
       - '3000:3000'
     links:
-      - 'postgres'
+      - 'postgres' #the container which is going to be runned at the same time.
   postgres:
     environment:
-      - 'POSTGRES_PASSWORD=mysecretpassword'
-    image: postgres
+      - 'POSTGRES_PASSWORD=mysecretpassword' #ENV variable for the postgres server.
+    image: postgres #the name of the image the postgres server is on.
     ports: 
-      - '5432:5432'
+      - '5432:5432' #the port the postgres server is runned on.
