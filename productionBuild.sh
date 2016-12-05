@@ -1,12 +1,13 @@
 #!/bin/bash
-npm install 
+npm install --silent
 cd client 
-npm install 
+npm install --silent
 cd .. 
 #clean and build the production build
-npm run build
+npm run build 
 
 #copy important files to the build dir
+cp ./Dockerfile ./build/
 cp ./package.json ./build/
 cp ./run ./build/
 
@@ -16,6 +17,6 @@ cd ./build
 
 
 #build the image
-docker build -t birkirfb/tictactoe .
+docker build -t birkirfb/tictactoe . 
 
-docker push birkirfb/tictactoe
+docker push birkirfb/tictactoe 
