@@ -17,4 +17,7 @@ cd ./build
 
 
 #build the image
+docker build -t birkirfb/tictactoe .
 
+
+docker push birkirfb/tictactoe
