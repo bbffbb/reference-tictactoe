@@ -12,6 +12,7 @@ cp ./run ./build/
 cd ./build
 
 
+
 #build the image
 docker build -t birkirfb/tictactoe .
 
