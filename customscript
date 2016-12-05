@@ -1,9 +1,5 @@
 #!/bin/bash
-npm install --silent
 
-cd ./client 
-npm install --silent
-cd ..
 #clean and build the production build
 npm run build
 
