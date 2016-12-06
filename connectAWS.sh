@@ -1,0 +1,1 @@
+ssh -i ~/Desktop/my-ec2-key-pair.pem ec2-user@ec2-54-88-243-178.compute-1.amazonaws.com
