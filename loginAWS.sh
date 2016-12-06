@@ -1,0 +1,1 @@
+ssh -i ~/Desktop/my-ec2-key-pair ec2-user@ dns

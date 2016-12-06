@@ -1,4 +1,3 @@
-
 FROM node
 WORKDIR /code
 ENV NODE_PATH=.
@@ -18,4 +17,4 @@ EXPOSE 3000
 
 
 # command executed when the container is runned.
-CMD ["sh","run"]
+CMD ["sh","run.sh"]
