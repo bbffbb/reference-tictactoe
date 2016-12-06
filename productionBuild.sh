@@ -7,6 +7,3 @@ cd ..
 npm run build
 
 
-sh dockerBuild.sh
-
-
