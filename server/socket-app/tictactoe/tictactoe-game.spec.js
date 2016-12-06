@@ -26,51 +26,6 @@ var joinEvent = {
 };
 
 
-describe('create game command', function() {
-
-
-    var given, when, then;
-
-    beforeEach(function(){
-        given=undefined;
-        when=undefined;
-        then=undefined;
-    });
-
-    afterEach(function () {
-        tictactoe(given).executeCommand(when, function(actualEvents){
-            should(JSON.stringify(actualEvents)).be.exactly(JSON.stringify(then));
-        });
-    });
-
-
-    it('should emit game created event', function(){
-
-        given = [];
-        when =
-        {
-            id:"123987",
-            type: "CreateGame",
-            user: {
-                userName: "TheGuy"
-            },
-            name: "TheFirstGame",
-            timeStamp: "2014-12-02T11:29:29"
-        };
-        then = [
-            {
-                type: "GameCreated",
-                user: {
-                    userName: "TheGuy"
-                },
-                name: "TheFirstGame",
-                timeStamp: "2014-12-02T11:29:29",
-                side:'X'
-            }
-        ];
-
-    })
-});
 
 
 describe('join game command', function () {
