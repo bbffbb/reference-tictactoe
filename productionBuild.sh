@@ -10,3 +10,4 @@ npm run build
 cp ./package.json ./build/
 cp ./run ./build/
 
+npm run start 

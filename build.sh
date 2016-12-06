@@ -12,7 +12,7 @@ cp ./package.json ./build/
 cp ./run ./build/
 
 #navigate into the build for the docker build to create the container from build dir
-cd ./build
+#cd ./build
 
 
 
