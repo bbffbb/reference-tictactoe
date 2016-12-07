@@ -17,6 +17,7 @@ _EOF_
 
 
 #copy important files to the build dir
+
 cp ./Dockerfile ./build/
 cp ./package.json ./build/
 cp ./run.sh ./build/
@@ -27,5 +28,5 @@ cd ./build
 
 
 #build the image
-sudo docker build -t birkirfb/tictactoe:$GIT_COMMIT .
-sudo docker push birkirfb/tictactoe:$GIT_COMMIT
+docker build -t birkirfb/tictactoe:$GIT_COMMIT .
+docker push birkirfb/tictactoe:$GIT_COMMIT
