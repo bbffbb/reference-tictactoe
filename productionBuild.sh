@@ -7,7 +7,13 @@ cd ..
 
 #clean and build the production build
 npm run build
+if [ -z "$GIT_COMMIT" ]; then
+  export GIT_COMMIT=$(git rev-parse HEAD)
+fi
 
+cat > ./build/.env <<_EOF_
+GIT_COMMIT=$GIT_COMMIT
+_EOF_
 
 
 #copy important files to the build dir
@@ -21,5 +27,5 @@ cd ./build
 
 
 #build the image
-docker build -t birkirfb/tictactoe .
-docker push birkirfb/tictactoe
+sudo docker build -t birkirfb/tictactoe:$GIT_COMMIT .
+sudo docker push birkirfb/tictactoe:$GIT_COMMIT

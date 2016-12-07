@@ -4,7 +4,7 @@ services:
     environment:
       - 'PORT=3000' #the port the server is runned on.
       - 'NODE_ENV=production'
-    image: 'birkirfb/tictactoe' #the name of the image the server is on.
+    image: 'birkirfb/tictactoe:${GIT_COMMIT}' #the name of the image the server is on.
     build:
       context: '.'
       dockerfile: 'Dockerfile' #which dockerfile is runned
