@@ -29,4 +29,5 @@ cd ./build
 
 #build the image
 docker build -t birkirfb/tictactoe:$GIT_COMMIT .
+
 docker push birkirfb/tictactoe:$GIT_COMMIT
