@@ -3,14 +3,14 @@ services:
   server:
     environment:
       - 'PORT=3000' #the port the server is runned on.
-      - 'NODE_ENV=production'
+      - 'NODE_ENV=production' #environment being runned
     image: 'birkirfb/tictactoe:${GIT_COMMIT}' #the name of the image the server is on.
     build:
       context: '.'
       dockerfile: 'Dockerfile' #which dockerfile is runned
     ports:
-      - '3000:3000'
-      - '80:3000'
+      - '3000:3000' #local port
+      - '80:3000' #testing on the AWS server
     links:
       - 'postgres' #the container which is going to be runned at the same time.
   postgres:
