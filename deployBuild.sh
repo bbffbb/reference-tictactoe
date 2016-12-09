@@ -11,4 +11,5 @@ scp -o StrictHostKeyChecking=no -i "~/my-ec2-key-pair.pem" ./provision/compose-a
 #scp -o StrictHostKeyChecking=no -i "~/my-ec2-key-pair.pem" ./build/.env ec2-user@ec2-54-234-172-233.compute-1.amazonaws.com:~/docker-compose.yml
 
 
+
 docker-compose up -d
