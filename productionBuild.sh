@@ -24,7 +24,7 @@ _EOF_
 #copy important files to the build dir
 cp ./Dockerfile ./build/
 cp ./package.json ./build/
-cp ./run.sh ./build/
+cp ./runserver.sh ./build/
 
 #navigate into the build for the docker build to create the container from build dir
 cd ./build
