@@ -17,4 +17,4 @@ EXPOSE 3000
 
 
 # command executed when the container is runned.
-CMD ["sh","run.sh"]
+CMD ["sh","runserver.sh"]
