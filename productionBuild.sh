@@ -16,7 +16,7 @@ if [ -z "$GIT_COMMIT" ]; then
   export GIT_COMMIT=$(git rev-parse HEAD)
 fi
 
-cat > ./build/.env <<_EOF_
+cat > ./.env <<_EOF_
 GIT_COMMIT=$GIT_COMMIT
 _EOF_
 
@@ -25,6 +25,7 @@ _EOF_
 cp ./Dockerfile ./build/
 cp ./package.json ./build/
 cp ./run.sh ./build/
+cp ./.env ./build/
 
 #navigate into the build for the docker build to create the container from build dir
 cd ./build
