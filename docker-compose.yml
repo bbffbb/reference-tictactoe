@@ -10,7 +10,6 @@ services:
       dockerfile: 'Dockerfile' #which dockerfile is runned
     ports:
       - '3000:3000' #local port
-      - '80:3000' #testing on the AWS server
     links:
       - 'postgres' #the container which is going to be runned at the same time.
   postgres:
