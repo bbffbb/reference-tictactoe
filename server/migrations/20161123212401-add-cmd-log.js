@@ -15,7 +15,8 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db,callback) {
-  db.createTable('commandlog', {
+  db.createTable('commandlog', 
+  {
     timestamp:{ type:'datetime'},
     id: { type: 'string', primaryKey: true },
     json: 'string'
