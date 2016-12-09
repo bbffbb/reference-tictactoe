@@ -168,7 +168,26 @@ describe('join game command', function () {
 
     });
 
+    describe('place move command', function () {
+        it(' should emit MovePlaced on first game move', function () {
 
+        })
+        it(' should emit IllegalMove when square is already occupied', function () {
+
+        })
+        it(' Should emit NotYourMove if attempting to make move out of turn', function () {
+
+        })
+        it(' Should emit game won on ', function () {
+
+        })
+        it(' Should not emit game draw if won on last move', function () {
+
+        })
+        it(' Should emit game draw when neither wins ', function () {
+            
+        })
+    });
 
 
     
