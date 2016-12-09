@@ -34,4 +34,4 @@ cd ./build
 docker build -t birkirfb/tictactoe:$GIT_COMMIT .
 
 #push the image into dockerubs
-docker push birkirfb/tictactoe:$GIT_COMMIT
+#docker push birkirfb/tictactoe:$GIT_COMMIT
