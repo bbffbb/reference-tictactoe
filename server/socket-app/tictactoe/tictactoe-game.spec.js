@@ -168,27 +168,72 @@ describe('join game command', function () {
 
     });
 
-    describe('place move command', function () {
-        it(' should emit MovePlaced on first game move', function () {
 
-        })
-        it(' should emit IllegalMove when square is already occupied', function () {
+    
+});
 
-        })
-        it(' Should emit NotYourMove if attempting to make move out of turn', function () {
 
-        })
-        it(' Should emit game won on ', function () {
+describe('place move game command', function () {
 
-        })
-        it(' Should not emit game draw if won on last move', function () {
 
-        })
-        it(' Should emit game draw when neither wins ', function () {
-            
-        })
+    var given, when, then;
+
+    beforeEach(function () {
+        given = undefined;
+        when = undefined;
+        then = undefined;
     });
 
+    afterEach(function () {
+        tictactoe(given).executeCommand(when, function (actualEvents) {
+            should(JSON.stringify(actualEvents)).be.exactly(JSON.stringify(then));
+        });
+    });
+
+
+    it('should emit MovePlaced on first game move', function () {
+
+        given = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29"
+
+            },
+            {
+                type: "GameJoined",
+                user: {
+                    userName: "Gummi"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29"
+            }
+        ];
+
+        when = {
+            type: "PlaceMove",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:30:29"
+        },
+
+        then = [
+            {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:30:29"
+            }
+        ];
+
+    });
 
     
 });

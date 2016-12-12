@@ -5,11 +5,17 @@ module.exports = function (injected) {
     return function (history) {
 
         var gamefull = false; 
+        var firstmove = true;
 
         function processEvent(event) {
             if(event.type==="GameJoined") {
                 gamefull=true;
             }
+
+            if(event.type==="MovePlaced") {
+                firstmove=false;
+            }
+
             console.debug("event", event);
         }
 
@@ -21,9 +27,17 @@ module.exports = function (injected) {
             return gamefull;
         }
 
+        function emptyBoard() {
+            return firstmove;
+        }
+
+   
+
+
         processEvents(history);
 
         return {
+            emptyBoard: emptyBoard,
             gameFull:gameFull,
             processEvents: processEvents
         }
