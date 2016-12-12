@@ -14,7 +14,7 @@ module.exports = function (injected) {
             }
 
             if(event.type==="MovePlaced") {
-                illegal=false;
+                illegal=true;
             } 
 
 
