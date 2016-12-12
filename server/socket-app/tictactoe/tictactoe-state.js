@@ -5,7 +5,7 @@ module.exports = function (injected) {
     return function (history) {
 
         var gamefull = false; 
-        var firstmove = true;
+        var firstmove = false;
 
         function processEvent(event) {
             if(event.type==="GameJoined") {
@@ -13,7 +13,7 @@ module.exports = function (injected) {
             }
 
             if(event.type==="MovePlaced") {
-                firstmove=false;
+                firstmove=true;
             }
 
             console.debug("event", event);
