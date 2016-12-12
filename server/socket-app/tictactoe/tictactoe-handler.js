@@ -43,10 +43,11 @@ module.exports = function(injected){
                         }]);
                     },
                     "PlaceMove": function(cmd){
-                        if(gameState.emptyBoard()) {
+                        
+                        if(gameState.isOccupied()) {
                             eventHandler([{
                                 gameId: cmd.gameId,
-                                type: "MadeFirstMove",
+                                type: "IllegalMove",
                                 user: cmd.user,
                                 name: cmd.name,
                                 timeStamp: cmd.timeStamp,
@@ -59,6 +60,7 @@ module.exports = function(injected){
                             user: cmd.user,
                             name: cmd.name,
                             timeStamp: cmd.timeStamp,
+                            side: 'X'
                         }]);
                         // Check here for conditions which prevent command from altering state
 

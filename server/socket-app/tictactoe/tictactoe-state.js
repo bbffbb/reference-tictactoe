@@ -6,6 +6,7 @@ module.exports = function (injected) {
 
         var gamefull = false; 
         var firstmove = false;
+        var illegal = false; 
 
         function processEvent(event) {
             if(event.type==="GameJoined") {
@@ -13,8 +14,18 @@ module.exports = function (injected) {
             }
 
             if(event.type==="MovePlaced") {
-                firstmove=true;
-            }
+                illegal=false;
+            } 
+
+
+
+
+            
+
+
+         
+
+
 
             console.debug("event", event);
         }
@@ -31,12 +42,17 @@ module.exports = function (injected) {
             return firstmove;
         }
 
+        function isOccupied() {
+            return illegal;
+        }
+
    
 
 
         processEvents(history);
 
         return {
+            isOccupied: isOccupied,
             emptyBoard: emptyBoard,
             gameFull:gameFull,
             processEvents: processEvents

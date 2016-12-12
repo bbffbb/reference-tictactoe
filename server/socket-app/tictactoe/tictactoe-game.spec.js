@@ -229,11 +229,64 @@ describe('place move game command', function () {
                     userName: "TheGuy"
                 },
                 name: "TheFirstGame",
-                timeStamp: "2014-12-02T11:30:29"
+                timeStamp: "2014-12-02T11:30:29",
+                side: 'X'
             }
         ];
 
     });
+
+    it('should emit IllegalMove when square is already occupied', function () {
+
+        given = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "IllegalMoveTest",
+                timeStamp: "2014-12-02T11:29:29"
+            },
+            {
+                type: "GameJoined",
+                user: {
+                    userName: "Gummi"
+                },
+                name: "IllegalMoveTest",
+                timeStamp: "2014-12-02T11:29:29"
+            },
+            {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "IllegalMoveTest",
+                timeStamp: "2014-12-02T11:30:29"
+            }
+        ];
+        
+        when = 
+        {
+            type: "PlaceMove",
+            user: {
+                userName: "Gummi"
+            },
+            name: "IllegalMoveTest",
+            timeStamp: "2014-12-02T11:30:29"
+        };
+
+        then = [
+        {
+            type: "IllegalMove",
+            user: {
+                userName: "Gummi"
+            },
+            name: "IllegalMoveTest",
+            timeStamp: "2014-12-02T11:30:29"
+        }];
+
+    });
+
 
     
 });
