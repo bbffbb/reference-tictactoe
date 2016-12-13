@@ -27,7 +27,7 @@ cp ./package.json ./build/
 cp ./runserver.sh ./build/
 
 #navigate into the build for the docker build to create the container from build dir
-cd ./build
+#cd ./build
 
 
 #build the image
