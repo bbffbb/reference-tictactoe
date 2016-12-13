@@ -199,7 +199,7 @@ describe('place move game command', function () {
                 user: {
                     userName: "TheGuy"
                 },
-                name: "TheFirstGame",
+                name: "TheSecondGame",
                 timeStamp: "2014-12-02T11:29:29"
 
             },
@@ -208,7 +208,7 @@ describe('place move game command', function () {
                 user: {
                     userName: "Gummi"
                 },
-                name: "TheFirstGame",
+                name: "TheSecondGame",
                 timeStamp: "2014-12-02T11:29:29"
             }
         ];
@@ -218,7 +218,7 @@ describe('place move game command', function () {
                 user: {
                     userName: "TheGuy"
                 },
-                name: "TheFirstGame",
+                name: "TheSecondGame",
                 timeStamp: "2014-12-02T11:30:29"
         },
 
@@ -228,7 +228,7 @@ describe('place move game command', function () {
                 user: {
                     userName: "TheGuy"
                 },
-                name: "TheFirstGame",
+                name: "TheSecondGame",
                 timeStamp: "2014-12-02T11:30:29",
                 side: 'X'
             }

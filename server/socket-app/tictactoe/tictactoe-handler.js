@@ -49,7 +49,7 @@ module.exports = function(injected){
                             user: cmd.user,
                             name: cmd.name,
                             timeStamp: cmd.timeStamp,
-                            side: 'X'
+                            side: cmd.side
                         }]);
                         // Check here for conditions which prevent command from altering state
 
