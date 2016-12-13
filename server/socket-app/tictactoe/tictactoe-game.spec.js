@@ -201,7 +201,6 @@ describe('place move game command', function () {
                 },
                 name: "TheSecondGame",
                 timeStamp: "2014-12-02T11:29:29"
-
             },
             {
                 type: "GameJoined",
@@ -220,19 +219,18 @@ describe('place move game command', function () {
                 },
                 name: "TheSecondGame",
                 timeStamp: "2014-12-02T11:30:29"
-        },
+        };
 
-        then = [
-            {
-                type: "MovePlaced",
+        then = 
+            [{
+            type: "MovePlaced",
                 user: {
                     userName: "TheGuy"
                 },
                 name: "TheSecondGame",
                 timeStamp: "2014-12-02T11:30:29",
-                side: 'X'
-            }
-        ];
+                side: "X"
+            }];
 
     });
 
