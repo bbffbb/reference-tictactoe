@@ -43,8 +43,17 @@ module.exports = function(injected){
                         }]);
                     },
                     "PlaceMove": function(cmd){
-                        
-                        if(gameState.isOccupied()) {
+                        if(gameState.firstMove()) {
+                           eventHandler([{
+                                gameId: cmd.gameId,
+                                type: "MovePlaced",
+                                user: cmd.user,
+                                name: cmd.name,
+                                timeStamp: cmd.timeStamp,
+                                side: 'X'
+                            }]);
+                            return; 
+                        } else if(gameState.isOccupied()) {
                             eventHandler([{
                                 gameId: cmd.gameId,
                                 type: "IllegalMove",
@@ -53,7 +62,16 @@ module.exports = function(injected){
                                 timeStamp: cmd.timeStamp,
                             }]);
                             return;
-                        }
+                        } else if(gameState.rightPlayer()) {
+                            eventHandler([{
+                                gameId: cmd.gameId,
+                                type: "NotYourMove",
+                                user: cmd.user,
+                                name: cmd.name,
+                                timeStamp: cmd.timeStamp,
+                            }]);
+                            return;
+                        } else 
                         eventHandler([{
                             gameId: cmd.gameId,
                             type: "MovePlaced",

@@ -5,23 +5,11 @@ module.exports = function (injected) {
     return function (history) {
 
         var gamefull = false; 
-        var firstmove = false;
-        var illegal = false; 
 
         function processEvent(event) {
             if(event.type==="GameJoined") {
                 gamefull=true;
-            }
-
-            if(event.type==="MovePlaced") {
-                illegal=true;
             } 
-
-
-
-
-            
-
 
          
 
@@ -38,12 +26,16 @@ module.exports = function (injected) {
             return gamefull;
         }
 
-        function emptyBoard() {
-            return firstmove;
+        function firstMove() {
+            return false;
         }
 
         function isOccupied() {
-            return illegal;
+            return true;
+        }
+
+        function rightPlayer() {
+            return true;
         }
 
    
@@ -52,8 +44,9 @@ module.exports = function (injected) {
         processEvents(history);
 
         return {
+            rightPlayer:rightPlayer,
             isOccupied: isOccupied,
-            emptyBoard: emptyBoard,
+            firstMove: firstMove,
             gameFull:gameFull,
             processEvents: processEvents
         }

@@ -287,7 +287,56 @@ describe('place move game command', function () {
 
     });
 
-   
+    it('Should emit NotYourMove if attempting to make move out of turn', function () {
+
+        given = [
+            {
+                type: "GameCreated",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "NotYourMoveTest",
+                timeStamp: "2014-12-02T11:29:29"
+            },
+            {
+                type: "GameJoined",
+                user: {
+                    userName: "Gummi"
+                },
+                name: "NotYourMoveTest",
+                timeStamp: "2014-12-02T11:29:29"
+            },
+            {
+                type: "MovePlaced",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "NotYourMoveTest",
+                timeStamp: "2014-12-02T11:30:29"
+            }
+        ];
+        
+        when = 
+        {
+            type: "PlaceMove",
+            user: {
+                userName: "TheGuy"
+            },
+            name: "NotYourMoveTest",
+            timeStamp: "2014-12-02T11:30:29"
+        };
+
+        then = [
+        {
+            type: "NotYourMove",
+            user: {
+                userName: "TheGuy"
+            },
+            name: "NotYourMoveTest",
+            timeStamp: "2014-12-02T11:30:29"
+        }];
+
+    });
 
     
 });
