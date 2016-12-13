@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mv ../TicTacToe/docker-compose.yml .
-mv ../TicTacToe/.env .
+#mv ../TicTacToe/docker-compose.yml .
+#mv ../TicTacToe/.env .
 ls
 #docker-compose down
 #docker pull birkirfb/tictactoe:$GIT_COMMIT
@@ -11,6 +11,6 @@ scp -o StrictHostKeyChecking=no -i "~/my-ec2-key-pair.pem" ./docker-compose.yml 
 scp -o StrictHostKeyChecking=no -i "~/my-ec2-key-pair.pem" .env ec2-user@ec2-54-174-116-245.compute-1.amazonaws.com:~/.env
 
 ssh -i "~/my-ec2-key-pair.pem" ec2-user@ec2-54-174-116-245.compute-1.amazonaws.com
-ls
+
 
 docker-compose up -d
