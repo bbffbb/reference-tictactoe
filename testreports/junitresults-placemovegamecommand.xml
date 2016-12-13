@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+ <testsuite name="place move game command" timestamp="2016-12-13T16:44:22" hostname="localhost" time="0.008" errors="0" tests="3" skipped="0" disabled="0" failures="2">
+  <testcase classname="place move game command" name="should emit MovePlaced on first game move" time="0.005">
+   <failure type="exception" message="AssertionError: expected &apos;[{&quot;type&quot;:&quot;IllegalMove&quot;,&quot;user&quot;:{&quot;userName&quot;:&quot;TheGuy&quot;},&quot;name&quot;:&quot;TheFirstGame&quot;,&quot;timeStamp&quot;:&quot;2014-12-02T11:30:29&quot;}]&apos; to be &apos;[{&quot;type&quot;:&quot;MovePlaced&quot;,&quot;user&quot;:{&quot;userName&quot;:&quot;TheGuy&quot;},&quot;name&quot;:&quot;TheFirstGame&quot;,&quot;timeStamp&quot;:&quot;2014-12-02T11:30:29&quot;,&quot;side&quot;:&quot;X&quot;}]&apos;"><![CDATA[AssertionError: expected '[{"type":"IllegalMove","user":{"userName":"TheGuy"},"name":"TheFirstGame","timeStamp":"2014-12-02T11:30:29"}]' to be '[{"type":"MovePlaced","user":{"userName":"TheGuy"},"name":"TheFirstGame","timeStamp":"2014-12-02T11:30:29","side":"X"}]'
+    at Assertion.fail (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/should/cjs/should.js:205:17)
+    at Assertion.value (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/should/cjs/should.js:277:19)
+    at /home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-game.spec.js:189:53
+    at Object.PlaceMove (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-handler.js:57:29)
+    at Object.executeCommand (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-handler.js:93:38)
+    at Object.<anonymous> (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-game.spec.js:188:26)
+    at attemptSync (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1950:24)
+    at QueueRunner.run (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1938:9)
+    at QueueRunner.execute (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:714:35)]]>
+   </failure>
+  </testcase>
+  <testcase classname="place move game command" name="should emit IllegalMove when square is already occupied" time="0.001" />
+  <testcase classname="place move game command" name="Should emit NotYourMove if attempting to make move out of turn" time="0.002">
+   <failure type="exception" message="AssertionError: expected &apos;[{&quot;type&quot;:&quot;IllegalMove&quot;,&quot;user&quot;:{&quot;userName&quot;:&quot;TheGuy&quot;},&quot;name&quot;:&quot;NotYourMoveTest&quot;,&quot;timeStamp&quot;:&quot;2014-12-02T11:30:29&quot;}]&apos; to be &apos;[{&quot;type&quot;:&quot;NotYourMove&quot;,&quot;user&quot;:{&quot;userName&quot;:&quot;TheGuy&quot;},&quot;name&quot;:&quot;NotYourMoveTest&quot;,&quot;timeStamp&quot;:&quot;2014-12-02T11:30:29&quot;}]&apos;"><![CDATA[AssertionError: expected '[{"type":"IllegalMove","user":{"userName":"TheGuy"},"name":"NotYourMoveTest","timeStamp":"2014-12-02T11:30:29"}]' to be '[{"type":"NotYourMove","user":{"userName":"TheGuy"},"name":"NotYourMoveTest","timeStamp":"2014-12-02T11:30:29"}]'
+    at Assertion.fail (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/should/cjs/should.js:205:17)
+    at Assertion.value (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/should/cjs/should.js:277:19)
+    at /home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-game.spec.js:189:53
+    at Object.PlaceMove (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-handler.js:57:29)
+    at Object.executeCommand (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-handler.js:93:38)
+    at Object.<anonymous> (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/server/socket-app/tictactoe/tictactoe-game.spec.js:188:26)
+    at attemptSync (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1950:24)
+    at QueueRunner.run (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1938:9)
+    at QueueRunner.execute (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/node_modules/jasmine-core/lib/jasmine-core/jasmine.js:714:35)]]>
+   </failure>
+  </testcase>
+ </testsuite>
+</testsuites>
