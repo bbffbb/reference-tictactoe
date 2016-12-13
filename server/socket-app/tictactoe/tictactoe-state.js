@@ -12,6 +12,10 @@ module.exports = function (injected) {
                 gamefull=true;
             } 
 
+          
+
+
+
 
 
             
@@ -27,6 +31,7 @@ module.exports = function (injected) {
         function gameFull() {
             return gamefull;
         }
+
 
         processEvents(history);
 

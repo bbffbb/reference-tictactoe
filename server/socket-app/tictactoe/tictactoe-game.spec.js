@@ -25,6 +25,16 @@ var joinEvent = {
     timeStamp: "2014-12-02T11:29:29"
 };
 
+var moveEvent = {
+    type: "MovePlaced",
+    user: {
+        userName: "TheGuy"
+    },
+    name : "TheFirstGame",
+    timeStamp: "2014-12-02T11:29:29",
+    side: "X"
+};
+
 
 describe('create game command', function() {
 
@@ -179,7 +189,7 @@ describe('place move game command', function () {
     var given, when, then;
 
     beforeEach(function () {
-        given = undefined;
+        given = [createEvent, joinEvent];
         when = undefined;
         then = undefined;
     });
@@ -193,44 +203,17 @@ describe('place move game command', function () {
 
     it('should emit MovePlaced on first game move', function () {
 
-        given = [
-            {
-                type: "GameCreated",
-                user: {
-                    userName: "TheGuy"
-                },
-                name: "TheSecondGame",
-                timeStamp: "2014-12-02T11:29:29"
-            },
-            {
-                type: "GameJoined",
-                user: {
-                    userName: "Gummi"
-                },
-                name: "TheSecondGame",
-                timeStamp: "2014-12-02T11:29:29"
-            }
-        ];
-
         when = {
             type: "PlaceMove",
                 user: {
                     userName: "TheGuy"
                 },
-                name: "TheSecondGame",
-                timeStamp: "2014-12-02T11:30:29"
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X"
         };
 
-        then = 
-            [{
-            type: "MovePlaced",
-                user: {
-                    userName: "TheGuy"
-                },
-                name: "TheSecondGame",
-                timeStamp: "2014-12-02T11:30:29",
-                side: "X"
-            }];
+        then = [moveEvent];
 
     });
 
