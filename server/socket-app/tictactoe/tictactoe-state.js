@@ -26,27 +26,10 @@ module.exports = function (injected) {
             return gamefull;
         }
 
-        function firstMove() {
-            return false;
-        }
-
-        function isOccupied() {
-            return true;
-        }
-
-        function rightPlayer() {
-            return true;
-        }
-
-   
-
-
+        
         processEvents(history);
 
         return {
-            rightPlayer:rightPlayer,
-            isOccupied: isOccupied,
-            firstMove: firstMove,
             gameFull:gameFull,
             processEvents: processEvents
         }
