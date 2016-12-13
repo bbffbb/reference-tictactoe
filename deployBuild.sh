@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mv ../TicTacToe-deployAWS/docker-compose.yml .
-mv ../TicTacToe-deployAWS/.env .
+mv ../TicTacToe/docker-compose.yml .
+mv ../TicTacToe/.env .
 ls
 #docker-compose down
 #docker pull birkirfb/tictactoe:$GIT_COMMIT
