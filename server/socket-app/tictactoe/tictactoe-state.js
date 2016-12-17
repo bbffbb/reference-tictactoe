@@ -4,8 +4,14 @@ module.exports = function (injected) {
 
     return function (history) {
 
+        var counter = 0;
+        var board = [ 
+                        [ 0, 0, 0 ],
+                        [ 0, 0, 0 ],
+                        [ 0, 0, 0 ] 
+                    ];
+
         var gamefull = false; 
-        var occupiedsquare = false;
 
         function processEvent(event) {
             if(event.type==="GameJoined") {
@@ -13,7 +19,9 @@ module.exports = function (injected) {
             } 
 
             if(event.type==="MovePlaced") {
-                occupiedsquare=true;
+                board[event.cords.x][event.cords.y] = 'X';
+                counter++;
+
             }
 
             
@@ -36,8 +44,11 @@ module.exports = function (injected) {
             return gamefull;
         }
 
-        function occupied() {
-            return occupiedsquare;
+        function occupied(event) {
+            if(board[event.x][event.y] !== 0) {
+                return true;
+            }
+            return false;
         }
 
 
