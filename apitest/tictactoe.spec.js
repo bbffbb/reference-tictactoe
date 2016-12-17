@@ -35,14 +35,9 @@ describe('Tictactoe API', function () {
 
         expect("Tictactoe API acceptance test").toBe("implemented here");
 
-/*
 
-This is exactly the sequence needed to make this work. You should not need to alter the code below.
-Write the missing functionality in user-api.js in order to make this work.
 
-Notice especially the passing of gameId from userA to userB. This is a must in this case, since games must be
-played in lock-step. All "expectXXX" functions must check for matching gameId, otherwise this will not work
-for a load test where multiple users will be playing.
+
 
         userA.expectGameCreated().createGame().then(()=> {
                 userB.expectGameJoined().joinGame(userA.getGame().gameId).then(function () {
@@ -63,7 +58,7 @@ for a load test where multiple users will be playing.
                 })
             }
         );
-*/
+
 
 
     });
