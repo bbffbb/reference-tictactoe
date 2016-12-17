@@ -10,7 +10,7 @@ module.exports=function(injected){
         var waitingFor=[];
         var commandId=0;
 
-       var game = {
+        var game = {
             gameId: generateUUID()
         };
 
@@ -31,13 +31,37 @@ module.exports=function(injected){
                 return me;
             },
             expectGameCreated:()=>{
-                waitingFor.push("expectGameCreated");
+                //waitingFor.push("expectGameCreated");
                 routingContext.eventRouter.on("GameCreated", function(createdGame) {
                     expect(g.gameId).toBeEqual(createdGame.gameId);
                     waitingFor.pop();
                     
                 });
                 return me;
+            },
+
+            joinGame:()=>{
+                var cmdId = generateUUID();
+                routingContext.commandRouter.routeMessage({
+                    commandId: cmdId,
+                    type: "JoinGame",
+                    gameId: game.gameId,
+                    timeStamp: new Date()});
+                return me;
+            },
+
+            expectGameJoined:()=>{
+                //waitingFor.push("expectGameJoined");
+                routingContext.eventRouter.on("JoinGame", function(joinedGame) {
+                    expect(g.gameId).toBeEqual(joinedGame.gameId);
+                    waitingFor.pop();
+                    
+                });
+                return me;
+            },
+
+            getGame:()=>{
+                return game;
             },
 
             expectUserAck:(cb)=>{
