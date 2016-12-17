@@ -259,8 +259,8 @@ describe('place move game command', function () {
                 },
                 name: "TheFirstGame",
                 timeStamp: "2014-12-02T11:29:29",
-                side: "X",
-                cords: { x: 0, y: 0}
+                side: "O",
+                cords: { x: 1, y: 0}
         };
         then = [{
             type: "NotYourMove",
@@ -269,8 +269,8 @@ describe('place move game command', function () {
                 },
                 name: "TheFirstGame",
                 timeStamp: "2014-12-02T11:29:29",
-                side: "X",
-                cords: { x: 0, y: 0}
+                side: "O",
+                cords: { x: 1, y: 0}
         }];
     });
 

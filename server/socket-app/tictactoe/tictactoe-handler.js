@@ -55,6 +55,19 @@ module.exports = function(injected){
                             return;
                         }
 
+                        if(gameState.wrongPlayer(cmd.side)) {
+                            eventHandler( [{
+                                type: "NotYourMove",
+                                user: cmd.user,
+                                name: cmd.name,
+                                timeStamp: cmd.timeStamp,
+                                side: cmd.side,
+                                cords:cmd.cords                                
+
+                            }]);
+                            return;
+                        }
+
                         events = [{
                             type: "MovePlaced",
                             user: cmd.user,

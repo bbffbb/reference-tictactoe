@@ -4,6 +4,7 @@ module.exports = function (injected) {
 
     return function (history) {
 
+        var whosTurn = 'X';
         var counter = 0;
         var board = [ 
                         [ 0, 0, 0 ],
@@ -19,12 +20,16 @@ module.exports = function (injected) {
             } 
 
             if(event.type==="MovePlaced") {
-                board[event.cords.x][event.cords.y] = 'X';
+                board[event.cords.x][event.cords.y] = whosTurn;
                 counter++;
 
-            }
+                if(event.side === whosTurn) {
+                    whosTurn = 'O';
+                } else {
+                    whosTurn = 'X';
+                }
 
-            
+            }
 
 
 
@@ -51,10 +56,18 @@ module.exports = function (injected) {
             return false;
         }
 
+        function wrongPlayer(event) {
+            if(event !== 'X') {
+                return true;
+            }
+            return false;
+        }
+
 
         processEvents(history);
 
         return {
+            wrongPlayer:wrongPlayer,
             occupied: occupied,
             gameFull:gameFull,
             processEvents: processEvents
