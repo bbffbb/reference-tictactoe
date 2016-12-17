@@ -274,6 +274,65 @@ describe('place move game command', function () {
         }];
     });
 
+    it('should emit gameWon if same side is matching 3 times', function() {
+        given = [createEvent, joinEvent, moveEvent, 
+            {
+            type: "PlaceMove",
+                user: {
+                    userName: "Gummi"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "O",
+                cords: { x: 0, y: 1}
+            },
+            {
+            type: "PlaceMove",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X",
+                cords: { x: 1, y: 0}
+            },
+            {
+                type: "PlaceMove",
+                user: {
+                    userName: "Gummi"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "O",
+                cords: { x: 0, y: 2}
+            }
+        ];
+
+        when = {
+                type: "PlaceMove",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X",
+                cords: { x: 2, y: 0}
+        };
+
+        then = [{
+            type: "GameWon",
+                user: {
+                    userName: "TheGuy"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "X",
+                cords: { x: 1, y: 0}
+        }];
+    });
+
+
+
     
 
     
