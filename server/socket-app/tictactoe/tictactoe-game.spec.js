@@ -217,6 +217,30 @@ describe('place move game command', function () {
 
     });
 
+    it('should emit IllegalMove when square is already occupied', function () {
+        given = [moveEvent];
+
+        when = {
+            type: "PlaceMove",
+                user: {
+                    userName: "Gummi"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",
+                side: "O"
+        };
+
+        then = [{
+            type: "IllegalMove",
+                user: {
+                    userName: "Gummi"
+                },
+                name: "TheFirstGame",
+                timeStamp: "2014-12-02T11:29:29",                
+        }];
+
+    });
+
     
 
     

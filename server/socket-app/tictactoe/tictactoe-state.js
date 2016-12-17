@@ -6,13 +6,14 @@ module.exports = function (injected) {
 
         var gamefull = false; 
 
-
         function processEvent(event) {
             if(event.type==="GameJoined") {
                 gamefull=true;
             } 
 
-          
+
+
+            
 
 
 
@@ -31,6 +32,8 @@ module.exports = function (injected) {
         function gameFull() {
             return gamefull;
         }
+
+       
 
 
         processEvents(history);
