@@ -68,7 +68,9 @@ module.exports = function (injected) {
             for(var i = 0; i < 3; i++) {
                 if(board[i][event.cords.y] == whosTurn && board[i][event.cords.y] == whosTurn && board[i][event.cords.y] == whosTurn) {
                     return true;
-                }
+                } else if(board[event.cords.x][i] == whosTurn && board[event.cords.x][i] == whosTurn && board[event.cords.x][i] == whosTurn) {
+                    return true;
+                } 
             }
 
             return false;
