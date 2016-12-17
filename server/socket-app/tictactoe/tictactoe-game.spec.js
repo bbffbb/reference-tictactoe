@@ -274,7 +274,7 @@ describe('place move game command', function () {
         }];
     });
 
-    it('should emit gameWon if same side is matching 3 times', function() {
+    it('should emit GameWon if same side is matching 3 times', function() {
         given = [createEvent, joinEvent, moveEvent, 
             {
             type: "PlaceMove",
@@ -327,7 +327,7 @@ describe('place move game command', function () {
                 name: "TheFirstGame",
                 timeStamp: "2014-12-02T11:29:29",
                 side: "X",
-                cords: { x: 1, y: 0}
+                cords: { x: 2, y: 0}
         }];
     });
 

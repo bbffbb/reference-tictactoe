@@ -68,6 +68,8 @@ module.exports = function(injected){
                             return;
                         }
 
+                        
+
                         events = [{
                             type: "MovePlaced",
                             user: cmd.user,
@@ -78,6 +80,20 @@ module.exports = function(injected){
                         }];
 
                         gameState.processEvents(events);
+
+
+                        if(gameState.gameWon(cmd)) {
+                            eventHandler( [{
+                                type: "GameWon",
+                                user: cmd.user,
+                                name: cmd.name,
+                                timeStamp: cmd.timeStamp,
+                                side: cmd.side,
+                                cords:cmd.cords                                
+
+                            }]);
+                            return;
+                        }
                         eventHandler(events);
                         
                         // Check here for conditions which prevent command from altering state

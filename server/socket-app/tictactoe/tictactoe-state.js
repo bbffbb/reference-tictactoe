@@ -28,8 +28,8 @@ module.exports = function (injected) {
                 } else {
                     whosTurn = 'X';
                 }
-
             }
+
 
 
 
@@ -63,10 +63,22 @@ module.exports = function (injected) {
             return false;
         }
 
+        function gameWon(event) {
+
+            for(var i = 0; i < 3; i++) {
+                if(board[i][event.cords.y] == whosTurn && board[i][event.cords.y] == whosTurn && board[i][event.cords.y] == whosTurn) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
 
         processEvents(history);
 
         return {
+            gameWon: gameWon,
             wrongPlayer:wrongPlayer,
             occupied: occupied,
             gameFull:gameFull,
