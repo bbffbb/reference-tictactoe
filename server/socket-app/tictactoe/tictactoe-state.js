@@ -5,13 +5,16 @@ module.exports = function (injected) {
     return function (history) {
 
         var gamefull = false; 
+        var occupiedsquare = false;
 
         function processEvent(event) {
             if(event.type==="GameJoined") {
                 gamefull=true;
             } 
 
-
+            if(event.type==="MovePlaced") {
+                occupiedsquare=true;
+            }
 
             
 
@@ -33,12 +36,15 @@ module.exports = function (injected) {
             return gamefull;
         }
 
-       
+        function occupied() {
+            return occupiedsquare;
+        }
 
 
         processEvents(history);
 
         return {
+            occupied: occupied,
             gameFull:gameFull,
             processEvents: processEvents
         }
