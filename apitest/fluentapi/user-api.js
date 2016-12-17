@@ -10,6 +10,10 @@ module.exports=function(injected){
         var waitingFor=[];
         var commandId=0;
 
+       var game = {
+            gameId: generateUUID()
+        };
+
         var routingContext = RoutingContext(inject({
             io,
             env:"test"
@@ -17,6 +21,25 @@ module.exports=function(injected){
 
         connectCount++;
         const me = {
+            createGame:()=>{
+                var cmdId = generateUUID();
+                routingContext.commandRouter.routeMessage({
+                    commandId: cmdId,
+                    type: "CreateGame",
+                    gameId: game.gameId,
+                    timeStamp: new Date()});
+                return me;
+            },
+            expectGameCreated:()=>{
+                waitingFor.push("expectGameCreated");
+                routingContext.eventRouter.on("GameCreated", function(createdGame) {
+                    expect(g.gameId).toBeEqual(createdGame.gameId);
+                    waitingFor.pop();
+                    
+                });
+                return me;
+            },
+
             expectUserAck:(cb)=>{
                 waitingFor.push("expectUserAck");
                 routingContext.socket.on('userAcknowledged', function(ackMessage){
