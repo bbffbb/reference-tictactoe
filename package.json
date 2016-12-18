@@ -54,7 +54,8 @@
     "startdockerdb": "docker run -p 5432:5432 --name pg2 -e POSTGRES_PASSWORD=mysecretpassword -d postgres",
     "connectdockerdb": "docker run -it --rm --link pg3:postgres postgres psql -h postgres -U postgres",
     "migratedb-prod": "db-migrate --config ./server/database.json --migrations-dir ./server/migrations up -e production",
-    "migratedb-add-event-col": "db-migrate --config ./server/database.json --migrations-dir ./server/migrations create add-event-column"
+    "migratedb-add-event-col": "db-migrate --config ./server/database.json --migrations-dir ./server/migrations create add-event-column",
+    "citest": "CI=true && export NODE_PATH=./src/ && react-scripts test --env=jsdom"
   },
   "repository": {
     "type": "git",
