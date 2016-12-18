@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="place move game command" timestamp="2016-12-17T21:06:51" hostname="localhost" time="0.007" errors="0" tests="4" skipped="0" disabled="0" failures="0">
+ <testsuite name="place move game command" timestamp="2016-12-18T19:59:42" hostname="localhost" time="0.015" errors="0" tests="4" skipped="0" disabled="0" failures="0">
   <testcase classname="place move game command" name="should emit MovePlaced on first game move" time="0.001" />
   <testcase classname="place move game command" name="should emit IllegalMove when square is already occupied" time="0.001" />
-  <testcase classname="place move game command" name="should emit NotYourMove if attempting to make move out of turn" time="0.001" />
-  <testcase classname="place move game command" name="should emit GameWon if same side is matching 3 times" time="0.003" />
+  <testcase classname="place move game command" name="should emit NotYourMove if attempting to make move out of turn" time="0.004" />
+  <testcase classname="place move game command" name="should emit GameWon if same side is matching 3 times" time="0.009" />
  </testsuite>
 </testsuites>
