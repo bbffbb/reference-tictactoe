@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="Tictactoe API" timestamp="2016-12-17T21:15:33" hostname="localhost" time="0.049" errors="0" tests="1" skipped="0" disabled="0" failures="1">
-  <testcase classname="Tictactoe API" name="should be able to play game to end" time="0.049">
+ <testsuite name="Tictactoe API" timestamp="2016-12-17T21:51:13" hostname="localhost" time="0.067" errors="0" tests="1" skipped="0" disabled="0" failures="1">
+  <testcase classname="Tictactoe API" name="should be able to play game to end" time="0.067">
    <failure type="exception" message="TypeError: userA.expectMoveMade is not a function"><![CDATA[TypeError: userA.expectMoveMade is not a function
     at /home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/apitest/tictactoe.spec.js:46:27
     at waitLonger (/home/birkirfreyr/Desktop/3vikna/dt1/reference-tictactoe/apitest/fluentapi/user-api.js:110:21)

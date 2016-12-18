@@ -2,12 +2,12 @@
 
 
 1. Jenkins URL and username and password. 
-   Url: http://82.221.49.114:8080
-   Username: kennari
-   PW: kennari1234
+   - Url: http://82.221.49.114:8080
+   - Username: kennari
+   - PW: kennari1234
 
 2. Game URL (AWS)
-   Url: http://54.174.116.245
+   - Url: http://54.174.116.245
 
    NOTE : Jenkins builds with schedule every hour because i could not get it to build automaticly on git push, but you can sign into jenkins and build manually to get the game server to run, it runs after the deploy project is built.
 
@@ -16,13 +16,13 @@
 
 Outline what script files you created and the purpose of each file. Each file should be commented. This could be
 
-  ./productionBuild.sh is my built script.
-  ./deployBuild.sh is my deploy script.
-  ./ADVANIA-login.sh is my lazy login to qstack server script.
-  ./AWS-login.sh is my lazy login to AWS game server script.
-  ./runserver.sh is a modified script for database migration. 
+  - ./productionBuild.sh is my built script.
+  - ./deployBuild.sh is my deploy script.
+  - /ADVANIA-login.sh is my lazy login to qstack server script.
+  - /AWS-login.sh is my lazy login to AWS game server script.
+  - ./runserver.sh is a modified script for database migration. 
   
-  /provision/compose-and-run.sh is a script intended for AWS server but i choose to include this in a one script, deployBuild.sh
+  - /provision/compose-and-run.sh is a script intended for AWS server but i choose to include this in a one script, deployBuild.sh
 
 
 ## Testing & logic
@@ -64,7 +64,7 @@ Do you have the following Jobs and what happens in each Job:
   7. push the newly created image to dockerhub
 
 - Acceptance Stage
-
+  
 - Capacity Stage
 
 - Other
